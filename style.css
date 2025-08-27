@@ -1,0 +1,801 @@
+html {
+    height:100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 25px 175px ;
+    padding: 30px 0 5px 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.menu ul li img {
+    width: 15px;
+    height: 15px;
+}
+
+/**********loader**********/
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.line-2-vertical {
+    --size: 24px;
+    --stroke-width: calc(var(--size) / 6);
+    --color: currentColor;
+    --animation-timing-function: linear;
+    --animation-duration: 1s;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+}
+  
+  
+.line-2-vertical::before,
+.line-2-vertical::after {
+    content: '';
+    position: absolute;
+    transform: scaleY(1);
+    animation: var(--animation-timing-function) var(--animation-duration) infinite line-2-vertical-animation;
+}
+  
+  
+.line-2-vertical::before {
+    inset: 0;
+    border-right: var(--stroke-width) solid var(--color);
+    border-left: var(--stroke-width) solid var(--color);
+}
+  
+  
+.line-2-vertical::after {
+    top: 0;
+    bottom: 0;
+    left: calc(50% - var(--stroke-width) / 2);
+    border-left: var(--stroke-width) solid var(--color);
+    animation-delay: calc(var(--animation-duration) / 2);
+}
+  
+  
+@keyframes line-2-vertical-animation {
+    0% {
+      transform: scaleY(1);
+    }
+  
+    50% {
+      transform: scaleY(.5);
+    }
+  
+    100% {
+      transform: scaleY(1);
+    }
+}
+
+
+/**********header**********/
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1.5px solid #000;
+    border-radius: 50px; 
+    padding: 5px 30px;
+    margin: 45px 30px 0 30px;
+}
+
+#header .header-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/**********mainvisual**********/
+
+#mainvisual .content {
+    height: 100vh;
+    text-align: center;
+    color: #000;
+    margin: 150px 20px 100px 20px;
+}
+
+#mainvisual .content h1 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#mainvisual .content h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#mainvisual .content .button {
+    width: 250px;
+    height: 30px;
+    background-color: #000;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+
+#mainvisual .content .button:hover {
+    opacity: .8;
+}
+
+#mainvisual .content .button a {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    font-size: 10px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+
+/*
+上下に動く矢印のアニメーション
+*/
+
+.cp_arrows {
+    position: relative;
+    display: flex;
+    height: 300px;/*画面いっぱいにする場合100vh*/
+    justify-content: center;
+    align-items: center;
+}
+  
+.cp_arrows .cp_arrow {/*矢印を配置するベースの設定*/
+    position: absolute;
+    top: 50%;/*着地点(cp_arrowsの高さの50%)*/
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 10px;
+    opacity: 0;  
+}
+ 
+.cp_arrows .cp_arrow:first-child {
+    animation: arrow-move08 2s ease-in-out infinite;
+}
+  
+.cp_arrows .cp_arrow:nth-child(2)  {
+    animation: arrow-move08 2s 1s ease-in-out infinite;
+}
+  
+.cp_arrows .cp_arrow:before,
+.cp_arrows .cp_arrow:after {/*矢印全体の設定*/
+    position: absolute;
+    content: '';
+    top: 0;
+    width: 30px;
+    height: 3px;
+    background: #484848;
+}
+  
+.cp_arrows .cp_arrow:before {/*矢印左の線の位置と傾斜*/
+    left: 3px;
+    transform: rotate(30deg);
+}
+  
+.cp_arrows .cp_arrow:after {/*矢印左の線の位置と傾斜*/
+    right: 3px;
+    transform: rotate(-30deg);
+}
+  
+@keyframes arrow-move08 {
+      0% { opacity: 0; top: 40%;/*スタート地点(cp_arrowsの高さの40%)*/}
+     70% { opacity: 1;}
+    100% { opacity: 0;}
+}
+
+
+
+/**********about**********/
+
+#about {
+    width: 94%;
+    height: 80vh;
+    background-color: #f6f6f6;
+    margin: 0 3%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#about .items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#about .items .icon img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+
+    margin: 10px auto 20px auto;
+}
+
+#about .text {
+    font-size: 15px;
+    border: 1.5px solid #e3e3e3;
+    color: #444444;
+    border-radius: 5px;
+    padding: 25px 30px;
+    margin: 0 20px;
+    background-color: #fff;
+}
+
+.box{
+    width: 94%;
+    height:0;
+    border-top: 100px solid #f6f6f6;
+    border-left: calc(94vw/2 - 10px) solid transparent;
+    border-right: calc(94vw/2 - 10px) solid transparent;
+    margin: 0 3%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 100px;
+}
+
+/**********skill**********/
+
+#skill {
+    margin-bottom: 100px;
+}
+
+#skill .skill-icons {
+    border: 1.5px solid #f0f0f0;
+    margin: 0 5%;
+    border-radius: 5px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+}
+
+#skill .skill-icons .subtitle {
+    font-size: 14px;
+}
+
+#skill .skill .label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    width: 35%;
+    padding: 5px 10px;
+    margin-top: 35px; 
+}
+
+#skill .skill .label .img {
+    width: 20px;
+    height: 20px;
+}
+
+#skill .skill .label span {
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* progress 全体 */
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+}
+  
+/* 背景部分*/
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 10px;
+}
+  
+/* 進捗部分*/
+progress::-webkit-progress-value {
+    background-color: #178ef6; /* ←ここで色を変更 */
+    border-radius: 10px;
+}
+  
+/* Firefox 用 */
+progress::-moz-progress-bar {
+    background-color: #178ef6;
+    border-radius: 10px;
+}
+
+#skill .skill-icons .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#skill .skill-icons .flex .tag {
+    font-size: 10px;
+    padding: 4px 12px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+  
+
+/**********works**********/
+
+#works {
+    margin-bottom: 100px;
+}
+
+#works .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#works .work-items { 
+    width: 80%;
+    height: 260px;
+    margin: 0 10% 20px 10%;
+    border: 1.5px solid #e7e7e7;
+    border-radius: 7px;
+    padding: 10px 15px;
+
+}
+
+#works .work-items .work-icon {
+    width: 100%;
+    height: 160px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#works .work-items .work-icon .label {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: #fff;
+    background-color: #5A94FF;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+#works .work-items .work-icon .img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+#works .work-items .work-text h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+#works .work-items .work-text p {
+    font-size: 8px;
+    margin: 5px 0;
+    color: #707070
+}
+
+#works .work-items .work-text .tech {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#works .work-items .work-text .tech .tech-item span {
+    font-size: 8px;
+    color: #000;
+    border: 1px solid #dadada;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+#works .work-items .work-text .tech .button {
+    width: 55px;
+    height: 25px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 8px;
+    font-weight: bold;
+    padding: 2px 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#works .work-items .work-text .tech .button:hover {
+    opacity: .8;
+}
+
+#works .work-items .work-icon .add {
+    background-color: #7d7d7d;
+}
+
+#works .work-items .work-text-add {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#works .work-items .work-text-add h2 {
+    font-size: 10px;
+    color: #7d7d7d;
+    font-weight: bold;
+}
+
+#works .work-items .work-icon .img-add {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#works .work-items .work-icon .img-add img {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    opacity: .5;
+}
+
+
+/**********goal**********/
+
+#goal {
+    margin-bottom: 100px;
+}
+
+
+/*
+続きをみるボタン
+*/
+.cp_box1 {
+    position: relative;
+    margin: 0 40px;
+}
+  
+.cp_box1 input {
+    display: none;
+}
+  
+/*開くためのボタンとテキストを隠すグラデーションの設定*/  
+.cp_box1 label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    bottom: -10px;
+    width: 100%;
+    height: 140px; /* グラデーションの高さ */
+    cursor: pointer;
+    text-align: center;
+    /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+    background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
+}
+  
+/* 開いた時にグラデーションを消す */
+.cp_box1 input:checked + label {
+    background: inherit;
+}
+  
+.cp_box1 input:checked + label {
+    /* display: none ; 閉じるボタンを消す場合コメントアウトを外す */
+}
+  
+.cp_box1 .cp_container {
+    overflow: hidden;
+    height: 180px; /* 開く前に見えている部分の高さ */
+    transition: all 0.5s;
+}
+  
+/*続きをよむボタン*/
+.cp_box1 label:after,
+.cp_box1 label::before {
+    content: '';
+    position: absolute;
+    line-height: 2.5rem;
+}
+  
+.cp_box1 label:after {
+    z-index: 2;
+    bottom: 20px;
+    width: 13em;
+    content: '続きをよむ';
+    color: #ffffff;
+    background: #000000;
+    border-radius: 20px;
+}
+  
+.cp_box1 label::before {
+    position: absolute;
+    bottom: 38px;
+    left: calc(50% - 3.5em);
+    z-index: 3;
+    width: 10px;
+    height: 5px;
+    background: #ffffff;
+    clip-path: polygon(50% 100%, 0 0, 100% 0)
+}
+  
+/*閉じるボタン*/
+.cp_box1 input:checked + label:after {
+    content: '閉じる';
+}
+  
+.cp_box1 input:checked + label:before {
+    left: calc(50% - 2.5em);
+    transform: scale(1, -1);
+}
+  
+.cp_box1 input:checked ~ .cp_container {
+    height: auto;
+    padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+    transition: all 0.5s;
+}
+
+/*
+続きをよむボタンここまで
+*/
+
+
+/**********contact**********/
+
+#contact {
+    height: 300px;
+}
+
+#contact .contact-items {
+    text-align: center;
+    margin: 0 40px;
+}
+
+#contact .contact-items p {
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+#contact .menu ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#contact .menu ul li img {
+    width: 15px;
+    height: 15px;
+}
+
+
+/**********footer**********/
+
+#footer {
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 15px;
+}
+
+
+
+/******************
+media query
+*******************/
+
+@media screen and (min-width: 768px) {
+    /* セクションタイトルの余白調整 */
+    .section-title {
+        font-size: 24px;
+        margin: 30px 100px;
+        padding: 30px 0 10px 0;
+    }
+
+    /**********header**********/
+
+    #header {
+        height: 50px;
+        padding: 10px 60px;
+        margin: 45px 80px 0 80px;
+        border-radius: 50px;
+    }
+    #header .header-title {
+        font-size: 28px;
+    }
+    .menu ul {
+        gap: 20px;
+    }
+    .menu ul li img {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    /**********mainvisual**********/
+
+    #mainvisual .content {
+        height: 80vh;
+        margin: 120px 120px 120px 120px;
+    }
+    #mainvisual .content h1 {
+        font-size: 40px;
+    }
+    #mainvisual .content h3 {
+        font-size: 24px;
+    }
+    #mainvisual .content .button {
+        width: 350px;
+        height: 45px;
+        margin-bottom: 0;
+    }
+    #mainvisual .content .button a {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .cp_arrows {
+        display: none;
+    }
+
+    /**********about**********/
+
+    #about {
+        height: 70vh;
+    }
+
+    #about .section-title {
+        padding: 50px 0 5px 0;
+    }
+
+    #about .items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+        margin: 0;
+    }
+    #about .items .icon img {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+    }
+    #about .text {
+        flex: 1;
+        max-width: 500px;
+    }
+    #about .text p {
+        font-size: 18px;
+        text-align: left;
+        margin: 0;
+    }
+
+    .box{
+        border-top: 100px solid #f6f6f6;
+        border-left: 590px solid transparent;
+        border-right: 590px solid transparent;
+        margin: 0 3%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-bottom: 100px;
+    }
+
+    /**********skill**********/
+
+    #skill {
+        margin: 0 5%;
+    }
+
+    #skill .skill-icons .skill .label {
+        width: 20%;
+    }
+
+    /**********works**********/
+
+    #works .section-title {
+        margin: 30px 120px;
+    }
+    #works .flex {
+        gap: 30px;
+        margin: 0 120px;
+    }
+    #works .work-items {
+        width: calc(50% - 15px);
+        margin: 0;
+        height: 400px;
+        padding: 10px;
+    }
+
+    #works .work-items .work-icon {
+        height: 250px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #works .work-items .work-text {
+        padding: 10px 15px 10px 15px;
+    }
+
+    #works .work-items .work-text h2 {
+        font-size: 20px;
+        margin-top: 0;
+    }
+    #works .work-items .work-text p {
+        font-size: 14px;
+    }
+
+    /**********goal**********/
+
+    #goal .section-title {
+        margin: 30px 120px;
+    }
+    .cp_box1 {
+        margin: 0 120px;
+    }
+    .cp_box1 .cp_container p {
+        font-size: 18px;
+        margin: 0;
+        line-height: 1.8;
+    }
+
+    /**********contact**********/
+
+    #contact {
+        height: 350px;
+    }
+    #contact .contact-items {
+        margin: 0 120px;
+    }
+    #contact .contact-items p {
+        font-size: 18px;
+    }
+    #contact .menu ul li img {
+        width: 22px;
+        height: 22px;
+    }
+
+    /**********footer**********/
+
+    #footer {
+        font-size: 14px;
+        padding-bottom: 25px;
+    }
+}
