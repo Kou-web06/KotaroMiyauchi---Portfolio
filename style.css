@@ -425,23 +425,6 @@ progress::-moz-progress-bar {
     border-radius: 3px;
 }
 
-#works .work-items .work-text .tech .button {
-    width: 55px;
-    height: 25px;
-    background-color: #000;
-    color: #fff;
-    border-radius: 3px;
-    font-size: 8px;
-    font-weight: bold;
-    padding: 2px 5px;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-#works .work-items .work-text .tech .button:hover {
-    opacity: .8;
-}
-
 #works .work-items .work-icon .add {
     background-color: #7d7d7d;
 }
