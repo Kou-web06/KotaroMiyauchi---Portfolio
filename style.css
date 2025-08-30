@@ -5,6 +5,7 @@ html {
 
 body {
     margin: 0;
+    font-family: "M PLUS 1p", sans-serif;
 }
 
 img {
@@ -15,7 +16,7 @@ img {
     text-align: center;
     font-size: 15px;
     font-weight: bold;
-    margin: 25px 175px ;
+    margin: 25px 0;
     padding: 30px 0 5px 0;
 }
 
@@ -107,7 +108,7 @@ img {
     border: 1.5px solid #000;
     border-radius: 50px; 
     padding: 5px 30px;
-    margin: 45px 30px 0 30px;
+    margin: 35px 30px 0 30px;
 }
 
 #header .header-title {
@@ -224,7 +225,7 @@ img {
 
 #about {
     width: 94%;
-    height: 80vh;
+    height: 100vh;
     background-color: #f6f6f6;
     margin: 0 3%;
     border-top-left-radius: 10px;
@@ -278,7 +279,7 @@ img {
 #skill .skill-icons {
     border: 1.5px solid #f0f0f0;
     margin: 0 5%;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 20px 30px;
     margin-bottom: 40px;
 }
@@ -288,25 +289,12 @@ img {
 }
 
 #skill .skill .label {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    width: 35%;
-    padding: 5px 10px;
     margin-top: 35px; 
+    margin-bottom:3px;
 }
 
-#skill .skill .label .img {
-    width: 20px;
-    height: 20px;
-}
-
-#skill .skill .label span {
-    font-size: 10px;
+#skill .skill-icons .skill .tag {
     font-weight: bold;
-    margin-left: 10px;
 }
 
 /* progress 全体 */
@@ -325,13 +313,13 @@ progress::-webkit-progress-bar {
   
 /* 進捗部分*/
 progress::-webkit-progress-value {
-    background-color: #178ef6; /* ←ここで色を変更 */
+    background-color: #a1c4fd; /* ←ここで色を変更 */
     border-radius: 10px;
 }
   
 /* Firefox 用 */
 progress::-moz-progress-bar {
-    background-color: #178ef6;
+    background-color: #a1c4fd;
     border-radius: 10px;
 }
 
@@ -342,7 +330,7 @@ progress::-moz-progress-bar {
     margin-top: 20px;
 }
 
-#skill .skill-icons .flex .tag {
+.tag {
     font-size: 10px;
     padding: 4px 12px;
     background-color: #f3f3f3;
@@ -401,7 +389,7 @@ progress::-moz-progress-bar {
 #works .work-items .work-text h2 {
     font-size: 12px;
     font-weight: bold;
-    margin: 5px 0;
+    margin: 3% 0 3% 0;
 }
 
 #works .work-items .work-text p {
@@ -424,6 +412,7 @@ progress::-moz-progress-bar {
     padding: 2px 5px;
     border-radius: 3px;
 }
+
 
 #works .work-items .work-icon .add {
     background-color: #7d7d7d;
@@ -458,106 +447,6 @@ progress::-moz-progress-bar {
     background-color: #fff;
     opacity: .5;
 }
-
-
-/**********goal**********/
-
-#goal {
-    margin-bottom: 100px;
-}
-
-
-/*
-続きをみるボタン
-*/
-.cp_box1 {
-    position: relative;
-    margin: 0 40px;
-}
-  
-.cp_box1 input {
-    display: none;
-}
-  
-/*開くためのボタンとテキストを隠すグラデーションの設定*/  
-.cp_box1 label {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
-    bottom: -10px;
-    width: 100%;
-    height: 140px; /* グラデーションの高さ */
-    cursor: pointer;
-    text-align: center;
-    /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
-    background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.95) 90%);
-}
-  
-/* 開いた時にグラデーションを消す */
-.cp_box1 input:checked + label {
-    background: inherit;
-}
-  
-.cp_box1 input:checked + label {
-    /* display: none ; 閉じるボタンを消す場合コメントアウトを外す */
-}
-  
-.cp_box1 .cp_container {
-    overflow: hidden;
-    height: 180px; /* 開く前に見えている部分の高さ */
-    transition: all 0.5s;
-}
-  
-/*続きをよむボタン*/
-.cp_box1 label:after,
-.cp_box1 label::before {
-    content: '';
-    position: absolute;
-    line-height: 2.5rem;
-}
-  
-.cp_box1 label:after {
-    z-index: 2;
-    bottom: 20px;
-    width: 13em;
-    content: '続きをよむ';
-    color: #ffffff;
-    background: #000000;
-    border-radius: 20px;
-}
-  
-.cp_box1 label::before {
-    position: absolute;
-    bottom: 38px;
-    left: calc(50% - 3.5em);
-    z-index: 3;
-    width: 10px;
-    height: 5px;
-    background: #ffffff;
-    clip-path: polygon(50% 100%, 0 0, 100% 0)
-}
-  
-/*閉じるボタン*/
-.cp_box1 input:checked + label:after {
-    content: '閉じる';
-}
-  
-.cp_box1 input:checked + label:before {
-    left: calc(50% - 2.5em);
-    transform: scale(1, -1);
-}
-  
-.cp_box1 input:checked ~ .cp_container {
-    height: auto;
-    padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
-    transition: all 0.5s;
-}
-
-/*
-続きをよむボタンここまで
-*/
 
 
 /**********contact**********/
