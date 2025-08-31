@@ -353,7 +353,7 @@ progress::-moz-progress-bar {
 
 #works .work-items { 
     width: 80%;
-    height: 260px;
+    height: 280px;
     margin: 0 10% 20px 10%;
     border: 1.5px solid #e7e7e7;
     border-radius: 7px;
@@ -405,12 +405,10 @@ progress::-moz-progress-bar {
     margin-bottom: 10px;
 }
 
-#works .work-items .work-text .tech .tech-item span {
+#works .work-items .work-text .tech .tech-item .tag {
     font-size: 8px;
-    color: #000;
-    border: 1px solid #dadada;
-    padding: 2px 5px;
-    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 2%;
 }
 
 
@@ -446,6 +444,58 @@ progress::-moz-progress-bar {
     height: 80px;
     background-color: #fff;
     opacity: .5;
+}
+
+/**********news**********/
+#news dl {
+    display: flex;
+    flex-direction: column;
+    border-top: solid 1px #c8c8c8;
+    margin: 0 5% 100px 5%;
+}
+
+#news .news-items {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #c8c8c8;
+}
+
+#news dt {
+    width: 30%;
+    font-size: 12px;
+    padding: 10px;
+}
+
+#news dd {
+    width: 55%;
+    font-size: 12px;
+    padding: 10px;
+}
+
+#news .category {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+    padding: 3px 10px;
+    margin: 8px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+}
+
+#news dd a {
+    text-decoration: none;
+    color: #000;
+}
+
+#news dd a:hover {
+    text-decoration: underline;
+    opacity: .8;
+}
+
+#news .category {
+
 }
 
 
@@ -634,20 +684,11 @@ media query
         font-size: 14px;
     }
 
-    /**********goal**********/
+    /************news***********/
 
-    #goal .section-title {
-        margin: 30px 120px;
+    #news dl {
+        margin: 0 20% 100px 20%;
     }
-    .cp_box1 {
-        margin: 0 120px;
-    }
-    .cp_box1 .cp_container p {
-        font-size: 18px;
-        margin: 0;
-        line-height: 1.8;
-    }
-
     /**********contact**********/
 
     #contact {
