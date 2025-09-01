@@ -108,14 +108,29 @@ img {
     border: 1.5px solid #000;
     border-radius: 50px; 
     padding: 5px 30px;
-    margin: 35px 30px 0 30px;
+    margin: 20px 30px 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: .8;
 }
 
 #header .header-title {
     font-size: 20px;
+    color: #000;
     font-weight: bold;
 }
 
+#header .header-title:hover {
+    opacity: .9;
+}
+
+#header .header-title a {
+    text-decoration: none;
+    color: inherit;
+}
 
 
 /**********mainvisual**********/
@@ -124,7 +139,7 @@ img {
     height: 100vh;
     text-align: center;
     color: #000;
-    margin: 150px 20px 100px 20px;
+    margin: 150px 20px 20px 20px;
 }
 
 #mainvisual .content h1 {
@@ -162,61 +177,57 @@ img {
     margin-bottom: 5px;
 }
 
+/**********
+scroll_down
+**********/
 
-/*
-上下に動く矢印のアニメーション
-*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 
-.cp_arrows {
-    position: relative;
-    display: flex;
-    height: 300px;/*画面いっぱいにする場合100vh*/
-    justify-content: center;
-    align-items: center;
+.scroll_down{
+  position:absolute;
+  bottom:1%;
+  right:50%;
+  animation: arrowmove 1s ease-in-out infinite;
 }
-  
-.cp_arrows .cp_arrow {/*矢印を配置するベースの設定*/
+
+.scroll_down a{
+  position: absolute;
+  left: -24px;
+  bottom: 17px;
+  color: #000;
+  font-size: 14px;
+  font-family: 'Josefin Sans', sans-serif;
+  letter-spacing: .2em;
+  writing-mode: vertical-rl;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.scroll_down:before {
+    content: "";
     position: absolute;
-    top: 50%;/*着地点(cp_arrowsの高さの50%)*/
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 10px;
-    opacity: 0;  
+    bottom: 5px;
+    right: -6px;
+    width: 2px;
+    height: 20px;
+    background: #000;
+    transform: skewX(-31deg);
 }
- 
-.cp_arrows .cp_arrow:first-child {
-    animation: arrow-move08 2s ease-in-out infinite;
+
+.scroll_down:after{
+  content:"";
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  width: 2px;
+  height: 85px;
+  background:#000;
 }
-  
-.cp_arrows .cp_arrow:nth-child(2)  {
-    animation: arrow-move08 2s 1s ease-in-out infinite;
-}
-  
-.cp_arrows .cp_arrow:before,
-.cp_arrows .cp_arrow:after {/*矢印全体の設定*/
-    position: absolute;
-    content: '';
-    top: 0;
-    width: 30px;
-    height: 3px;
-    background: #484848;
-}
-  
-.cp_arrows .cp_arrow:before {/*矢印左の線の位置と傾斜*/
-    left: 3px;
-    transform: rotate(30deg);
-}
-  
-.cp_arrows .cp_arrow:after {/*矢印左の線の位置と傾斜*/
-    right: 3px;
-    transform: rotate(-30deg);
-}
-  
-@keyframes arrow-move08 {
-      0% { opacity: 0; top: 40%;/*スタート地点(cp_arrowsの高さの40%)*/}
-     70% { opacity: 1;}
-    100% { opacity: 0;}
+
+@keyframes arrowmove{
+   0%{bottom:1%;}
+   50%{bottom:5%;}
+   00%{bottom:1%;}
 }
 
 
@@ -462,25 +473,30 @@ progress::-moz-progress-bar {
 
 #news dt {
     width: 30%;
-    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 10px;
     padding: 10px;
 }
 
 #news dd {
     width: 55%;
-    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 10px;
     padding: 10px;
 }
 
 #news .category {
     width: 15%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 8px;
     padding: 3px 10px;
     margin: 8px;
-    background-color: #f6f6f6;
     border-radius: 5px;
 }
 
@@ -531,7 +547,7 @@ progress::-moz-progress-bar {
 
 #footer {
     text-align: center;
-    font-size: 10px;
+    font-size: 8px;
     padding-bottom: 15px;
 }
 
@@ -552,20 +568,20 @@ media query
     /**********header**********/
 
     #header {
-        height: 50px;
+        height: 40px;
         padding: 10px 60px;
-        margin: 45px 80px 0 80px;
+        margin: 20px 80px 20px 80px;
         border-radius: 50px;
     }
     #header .header-title {
-        font-size: 28px;
+        font-size: 25px;
     }
     .menu ul {
         gap: 20px;
     }
     .menu ul li img {
-        width: 22px;
-        height: 22px;
+        width: 15px;
+        height: 15px;
     }
 
 
@@ -573,7 +589,7 @@ media query
 
     #mainvisual .content {
         height: 80vh;
-        margin: 120px 120px 120px 120px;
+        margin: 150px 120px 120px 120px;
     }
     #mainvisual .content h1 {
         font-size: 40px;
@@ -688,6 +704,14 @@ media query
 
     #news dl {
         margin: 0 20% 100px 20%;
+    }
+
+    #news .news-items dt {
+        align-items: right;
+    }
+
+    #news .news-items span {
+        align-items: left;
     }
     /**********contact**********/
 
