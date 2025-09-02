@@ -503,11 +503,14 @@ progress::-moz-progress-bar {
 #news dd a {
     text-decoration: none;
     color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 #news dd a:hover {
     text-decoration: underline;
     opacity: .8;
+    transform: scale(1.05);
 }
 
 #news .category {
@@ -551,7 +554,44 @@ progress::-moz-progress-bar {
     padding-bottom: 15px;
 }
 
+#page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    line-height: 1;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity .45s ease, transform .45s ease, visibility 0s linear .45s;
+}
+  
+#page-top a {
+    background: #000;
+    text-decoration: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    padding: 20px 5px 5px 5px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.9;
+    transition: all .3s ease;
+}
+  
+#page-top a:hover {
+    text-decoration: none;
+    opacity: .5;
+}
 
+#page-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity .6s ease, transform .6s ease, visibility 0s;
+}
 
 /******************
 media query
