@@ -2,7 +2,7 @@ window.addEventListener("load", function() {
     document.querySelector("#loading").style.display = "none";
 });
 
-// ページTOPに戻るボタン
+// ページTOPに戻るボタン（jQuery非依存）
 document.addEventListener("DOMContentLoaded", function() {
     var pagetop = document.getElementById('page-top');
     if (!pagetop) return;
