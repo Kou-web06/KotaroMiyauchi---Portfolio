@@ -17,36 +17,36 @@
         <div class="line-2-vertical"></div>
     </div>
 
-   
-    <!------------header------------->
-    <header id="header">
-        <h1 class="header-title"><a href="index.html">Portfolio</a></h1>
+<!------------main------------>
+   <main id="main">
+        <div id="background">
+            <div class="bg"></div>
+            <!------------header------------->
+            <section id="header">
+                <h1 class="header-title"><a href="index.html">Portfolio</a></h1>
 
-        <nav class="menu">
-            <ul>
-                <li><a href="https://x.com/kou_webapp"><img src="img/x.png" alt="x"></a></li>
-                <li><a href="https://www.wantedly.com/id/kotaro_miyauchi"><img src="img/wantedly.png" alt="wantedly"></a></li>
-                <li><a href="https://github.com/Kou-web06"><img src="img/github.png" alt="github"></a></li>
-            </ul>
-        </nav>
-    </header>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="https://x.com/kou_webapp"><img src="img/x.png" alt="x"></a></li>
+                        <li><a href="https://www.wantedly.com/id/kotaro_miyauchi"><img src="img/wantedly.png" alt="wantedly"></a></li>
+                        <li><a href="https://github.com/Kou-web06"><img src="img/github.png" alt="github"></a></li>
+                    </ul>
+                </nav>
+            </section>
 
-    <!------------main------------->
-    <main id="main">
-        <section id="mainvisual">
-            <div class="content"> 
-                <h1>Hello, I'm Kotaro👋</h1>
-                <h3>Welcome to my Portfolio!</h3>
 
-                <div class="button">
-                    <a href="#about">About Me &nbsp &nbsp ▾</a>
-                </div> 
+            <!------------mainvisual------------->
+            <section id="mainvisual">
+                <div class="content"> 
+                    <h1>Hello, I'm Kotaro Miyauchi</h1>
+                    <h3>Welcome to my Portfolio!</h3>
 
-                <div class="scroll_down">
-                    <a href="#">Scroll</a>
+                    <div class="scroll_down">
+                        <a href="#about">Scroll</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <section id="about">
             <div class="section-title">
@@ -56,8 +56,12 @@
             <div class="items">
                 <div class="icon">
                     <img src="img/icon.png" alt="icon">
-                </div>  
-                
+                    
+                    <div class="name">
+                        <p>@kou_webapp</p>
+                    </div>
+                </div>
+
                 <div class="text">
                     <p>
                       工学院大学情報学部に通う2年生。<br>
@@ -204,7 +208,7 @@
         <!--ページTOPに戻るボタン-->
         <p id="page-top"><a href="#">TOP</a></p>
         
-        <p>&copy; 2025 Kotaro Miyauchi.</p>
+        <p class="copyright">&copy; 2025 Kotaro Miyauchi.</p>
     </footer>
 
     <script src="script.js"></script>
