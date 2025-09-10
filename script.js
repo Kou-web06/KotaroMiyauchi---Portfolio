@@ -1,8 +1,9 @@
+// ローディングアニメーション
 window.addEventListener("load", function() {
     document.querySelector("#loading").style.display = "none";
 });
 
-// ページTOPに戻るボタン（jQuery非依存）
+// ページTOPに戻るボタン
 document.addEventListener("DOMContentLoaded", function() {
     var pagetop = document.getElementById('page-top');
     if (!pagetop) return;
@@ -53,3 +54,16 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+// アニメーション設定
+const targets = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      obs.unobserve(entry.target); // 一度だけ動作する
+    }
+  });
+}, { threshold: 0.2 }); // 20%見えたら発動
+
+targets.forEach(target => observer.observe(target));
