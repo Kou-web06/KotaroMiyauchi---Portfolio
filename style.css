@@ -893,6 +893,10 @@ media query
         padding: 0;
     }
 
+    #works .work-items .work-icon .demo a {
+        height: 250px;
+    }
+
     #works .work-items .work-icon .img {
         height: 100px;
         width: 100px
