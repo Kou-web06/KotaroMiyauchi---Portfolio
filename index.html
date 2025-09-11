@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
     <!-----------loader---------->
@@ -25,15 +26,32 @@
             <section id="header">
                 <h1 class="header-title"><a href="index.html">Portfolio</a></h1>
 
-                <nav class="menu">
+                <span class="material-symbols-outlined" id="open">menu</span>
+            </section>
+            
+            <!--ハンバーガーメニュー-->
+            <div class="overlay">
+                <span class="material-symbols-outlined" id="close">close</span>
+
+                <nav>
                     <ul>
-                        <li><a href="https://x.com/kou_webapp"><img src="img/x.png" alt="x"></a></li>
-                        <li><a href="https://www.wantedly.com/id/kotaro_miyauchi"><img src="img/wantedly.png" alt="wantedly"></a></li>
-                        <li><a href="https://github.com/Kou-web06"><img src="img/github.png" alt="github"></a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skill">Skills</a></li>
+                        <li><a href="#works">Works</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <nav class="menu">
+                                <ul>
+                                    <li><a href="https://x.com/kou_webapp"><img src="img/x.png" alt="x"></a></li>
+                                    <li><a href="https://www.wantedly.com/id/kotaro_miyauchi"><img src="img/wantedly.png" alt="wantedly"></a></li>
+                                    <li><a href="https://github.com/Kou-web06"><img src="img/github.png" alt="github"></a></li>
+                                </ul>
+                            </nav>
+                        </li>
                     </ul>
                 </nav>
-            </section>
-
+            </div>
 
             <!------------mainvisual------------->
             <section id="mainvisual">
@@ -130,6 +148,13 @@
                     <div class="work-icon">
                         <span class="label">Web制作</span>
                         <a href="https://kotaromiyauchi-portfolio.vercel.app/"><img src="img/portfolio.jpg" alt="portfolio"></a>
+                        <div class="demo">
+                            <a href="https://kotaromiyauchi-portfolio.vercel.app/">
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="work-text">
