@@ -70,7 +70,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .line-2-vertical {
@@ -140,7 +140,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 #header .header-title {
@@ -157,6 +157,109 @@ img {
 #header .header-title a {
     text-decoration: none;
     color: inherit;
+}
+
+/**********ハンバーガーメニュー**********/
+
+#open {
+    cursor: pointer;
+}
+
+#open.hide {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(242, 242, 242, 0.9);
+    z-index: 1500;
+    text-align: center;
+    padding: 64px;
+    opacity: 0;
+    pointer-events: none;
+    margin: 15px 30px 60px 30px;
+    border-radius: 20px;
+    transform: translateY(16px);
+    transition: opacity .6s, transform .6s;
+}
+
+.overlay .menu {
+    display: flex;
+    justify-content: center;
+    opacity: .9;
+}
+
+.overlay #close {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 30px;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay li {
+    margin-top: 24px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li {
+    opacity: 1;
+    transform: none;
+}
+
+.overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3) {
+    transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4) {
+    transition-delay: .4s;
+}
+
+.overlay.show li:nth-child(5) {
+    transition-delay: .5s;
+}
+
+.overlay.show li:nth-child(6) {
+    transition-delay: .6s;
+}
+
+.overlay li a {
+    text-decoration: none;
+    color: #4b4b4b;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    transition: opacity .3s, transform .3s; /* 閉じる時もスムーズに戻す */
+}
+
+.overlay li a:hover {
+    opacity: .6;
+    transform: scale(1.25);
 }
 
 
@@ -362,6 +465,37 @@ progress::-moz-progress-bar {
 
 /**********works**********/
 
+/*デモリンクの実装*/
+#works .work-icon .demo a {
+    background-color: rgba(0, 0, 0, .15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#works .work-icon .demo a .material-symbols-outlined {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#works .work-icon .demo a:hover {
+    opacity: 1;
+}
+
+/*ここまで*/
+
 #works {
     margin-bottom: 100px;
 }
@@ -531,7 +665,7 @@ progress::-moz-progress-bar {
 #contact {
     height: 300px;
     background-color: #f6f6f6;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 #contact .contact-items {
@@ -642,6 +776,16 @@ media query
     .menu ul li img {
         width: 15px;
         height: 15px;
+    }
+
+    /*ハンバーガーメニュー*/
+    .overlay {
+        margin: 20px 80px 60px 80px;
+    }
+
+    .overlay #close {
+        top: 8px;
+        right: 60px;
     }
 
 
