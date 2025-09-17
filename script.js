@@ -33,8 +33,14 @@
 
     // 背景画像の切り替え
     const images = ['img/background1.jpg', 'img/background2.jpg', 'img/background3.png'];
-    let index = 0;
 
+    // 事前読み込み（遅延防止）
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+    
+    let index = 0;
     setInterval(() => {
     index = (index + 1) % images.length;
     document.getElementById('background').style.backgroundImage = `url(${images[index]})`;
