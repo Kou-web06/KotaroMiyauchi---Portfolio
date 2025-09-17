@@ -5,7 +5,7 @@ html {
 
 body {
     margin: 0;
-    /*font-family: "M PLUS 1p", sans-serif;*/
+    font-family: "M PLUS 1p", sans-serif;
 }
 
 img {
@@ -15,6 +15,7 @@ img {
 .section-title {
     text-align: center;
     font-size: 15px;
+    font-family: sans-serif;
     font-weight: bold;
     margin: 25px 0;
     padding: 30px 0 5px 0;
@@ -38,12 +39,13 @@ img {
 }
 
 #background {
-    background-image: url(img/background.jpg);
+    background-image: url(img/background3.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     z-index: -1;
+    transition: background-image 1s ease-in-out;
 }
 
 .fade-up {
@@ -178,7 +180,7 @@ img {
     background: rgba(242, 242, 242, 0.9);
     z-index: 1500;
     text-align: center;
-    padding: 64px;
+    padding: 34px 64px;
     opacity: 0;
     pointer-events: none;
     margin: 15px 30px 100px 30px;
@@ -696,6 +698,7 @@ progress::-moz-progress-bar {
     color: #fff;
     padding: 8px 0;
     border-radius: 5px;
+    transition: opacity .3s;
 }
 
 #contact .mail a {
@@ -706,6 +709,10 @@ progress::-moz-progress-bar {
     font-size: 12px;
     text-decoration: none;
     color: #fff;
+}
+
+#contact .mail:hover {
+    opacity: .8;
 }
 
 #contact .mail a svg {
@@ -719,7 +726,7 @@ progress::-moz-progress-bar {
     margin-top: 0;
 }
 
-#contact .contact-items p {
+#contact .contact-items .mailnav {
     font-size: 10px;
     margin-top: 10px;
 }
@@ -970,7 +977,7 @@ media query
     }
 
     #contact .contact-items p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     #contact .menu ul li img {
@@ -985,13 +992,14 @@ media query
         border-radius: 5px;
     }
 
-    #contact .contact-items p {
-        font-size: 12px;
+    #contact .contact-items .mailnav {
+        font-size: 15px;
     }
 
 
     /**********footer**********/
 
     #footer {
+        margin-bottom: 10px;
     }
 }
