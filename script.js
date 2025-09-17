@@ -31,6 +31,17 @@
     });
 
 
+    // 背景画像の切り替え
+    const images = ['img/background1.jpg', 'img/background2.jpg', 'img/background3.png'];
+    let index = 0;
+
+    setInterval(() => {
+    index = (index + 1) % images.length;
+    document.getElementById('background').style.backgroundImage = `url(${images[index]})`;
+    }, 5000); // 5秒ごと
+
+
+
     // ページTOPに戻るボタン
     document.addEventListener("DOMContentLoaded", function() {
         var pagetop = document.getElementById('page-top');
