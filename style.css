@@ -132,16 +132,28 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255,255,255,0.93);
-    border: 1.2px solid #474747;
-    border-radius: 50px; 
+    width: 94%;
+    height: 40px;
     padding: 5px 30px;
-    margin: 15px 30px 0 30px;
+    margin: 15px auto 0 auto;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    /*すりガラス風*/
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
 }
 
 #header .header-title {
@@ -176,16 +188,22 @@ img {
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(242, 242, 242, 0.9);
     z-index: 1500;
+    width: 94%;
+    height: auto;
     text-align: center;
     padding: 64px;
     opacity: 0;
     pointer-events: none;
-    margin: 15px 30px 100px 30px;
+    margin: 15px auto 100px auto;
     border-radius: 20px;
     transform: translateY(18px);
     transition: opacity .6s, transform .6s;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .overlay .menu {
@@ -780,10 +798,12 @@ media query
     /**********header**********/
 
     #header {
+        width: 700px;
         height: 40px;
+        text-align: center;
         padding: 10px 60px;
-        margin: 20px 80px 20px 80px;
-        border-radius: 50px;
+        margin: 20px auto;
+        border-radius: 10px;
     }
     #header .header-title {
         font-size: 25px;
@@ -798,7 +818,8 @@ media query
 
     /*ハンバーガーメニュー*/
     .overlay {
-        margin: 20px 80px 60px 80px;
+        width: 700px;
+        margin: 20px auto 60px auto;
     }
 
     .overlay #close {
