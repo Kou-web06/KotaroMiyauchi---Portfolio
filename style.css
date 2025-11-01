@@ -190,7 +190,7 @@ img {
     left: 0;
     z-index: 1500;
     width: 94%;
-    height: auto;
+    max-height: 500px;
     text-align: center;
     padding: 64px;
     opacity: 0;
@@ -230,6 +230,24 @@ img {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+/* language toggle styles */
+.lang-toggle {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+}
+.lang-toggle button {
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.lang-toggle button:hover {
+    background: rgba(0,0,0,0.03);
 }
 
 .overlay li {
@@ -399,7 +417,7 @@ scroll_down
     font-size: 15px;
     border: 1.5px solid #e3e3e3;
     color: #444444;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 25px 30px;
     margin: 0 20px;
     background-color: #fff;
@@ -517,6 +535,7 @@ progress::-moz-progress-bar {
 }
 /*↑ここまで*/
 
+
 #works {
     margin-bottom: 100px;
 }
@@ -533,14 +552,17 @@ progress::-moz-progress-bar {
     height: 280px;
     margin: 3% 10% 10% 10%;
     border: 1.5px solid #e7e7e7;
-    border-radius: 7px;
+    border-radius: 15px;
     padding: 10px 15px;
 
 }
 
 #works .work-items .work-icon {
-    width: 100%;
+    max-width: 100%;
     height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -556,12 +578,9 @@ progress::-moz-progress-bar {
 }
 
 #works .work-items .work-icon .img {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
 }
 
 #works .work-items .work-text h2 {
@@ -662,7 +681,7 @@ progress::-moz-progress-bar {
 #contact {
     height: 300px;
     padding-top: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 #contact .contact-items {
@@ -726,58 +745,70 @@ progress::-moz-progress-bar {
     margin-top: 10px;
 }
 
+
+/*********各種sns**********/
+.sns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.sns p {
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+
+
 /**********footer**********/
 
 #footer {
     text-align: center;
     font-size: 8px;
-    background-color: #fff;
-    padding-bottom: 10px;
+    max-height: 200px;
+}
+
+#footer .dots {
+    background-color: #ffffff;
+    /* ドットを描くパターン。繰り返すように明示し、要素の高さを確保 */
+    background-image: radial-gradient(circle, #e4e4e4 2px, transparent 2px);
+    background-position: 0 0;
+    background-size: 23px 23px;
+    background-repeat: repeat;
+    min-height: 200px; /* footer と同じ高さを確保してパターンを表示 */
+    position: relative; /* 疑似要素を使うために相対配置 */
+    width: 100%;
+    padding: 8px 0; /* 内側に余白をつけてドットとテキストが重なりにくくする */
+}
+
+/* 疑似要素で上から下へフェードする白のグラデーションを重ねる */
+#footer .dots::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    /* 上部は透明、下に向かって白で覆い隠す（フェード） */
+    background: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,1) 100%);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+/* 疑似要素の上にコンテンツが表示されるようにする */
+#footer .dots > * {
+    position: relative;
+    z-index: 2;
 }
 
 #footer .copyright {
-    margin-top: 100px;
-
+    margin: 150px auto 0 auto;
+    color: #707070;
 }
 
-#page-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 14px;
-    line-height: 1;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-    transition: opacity .45s ease, transform .45s ease, visibility 0s linear .45s;
-}
-  
-#page-top a {
-    background: #000;
-    text-decoration: none;
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    padding: 20px 5px 5px 5px;
-    text-align: center;
-    display: block;
-    border-radius: 50%;
-    opacity: 0.9;
-    transition: all .3s ease;
-}
-  
-#page-top a:hover {
-    text-decoration: none;
-    opacity: .5;
-}
 
-#page-top.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: opacity .6s ease, transform .6s ease, visibility 0s;
-}
 
 /******************
 media query
