@@ -30,6 +30,71 @@
         });
     });
 
+    class TxtRotate {
+        constructor(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = "";
+            this.isDeleting = false;
+            this.tick();
+        }
+
+        tick() {
+            const i = this.loopNum % this.toRotate.length;
+            const fullTxt = this.toRotate[i];
+
+            // タイピング / 削除
+            this.txt = this.isDeleting
+            ? fullTxt.substring(0, this.txt.length - 1)
+            : fullTxt.substring(0, this.txt.length + 1);
+
+            this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+
+            // 打ち込み速度
+            let delta = 80 - Math.random() * 100;
+            if (this.isDeleting) delta /= 1.2;
+
+            // 全部打ち終わったら止める
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            }
+            // 消し終わったら次へ
+            else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(() => this.tick(), delta);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".txt-rotate");
+
+        elements.forEach((el) => {
+            const toRotate = el.getAttribute("data-rotate");
+            const period = el.getAttribute("data-period");
+
+            if (toRotate) {
+            new TxtRotate(el, JSON.parse(toRotate), period);
+            }
+        });
+
+        // inject CSS（元コードと互換）
+        const style = document.createElement("style");
+        style.textContent = `
+            .txt-rotate > .wrap {
+            border-right: 0.08em solid #666;
+            padding-right: 4px;
+            }
+        `;
+        document.body.appendChild(style);
+    });
+
 
 
     // ページTOPに戻るボタン
