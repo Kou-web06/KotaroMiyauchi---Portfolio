@@ -6,6 +6,8 @@ html {
 body {
     margin: 0;
     font-family: "M PLUS 1p", sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 img {
@@ -15,10 +17,11 @@ img {
 .section-title {
     text-align: center;
     font-size: 15px;
-    font-family: sans-serif;
     font-weight: bold;
     margin: 25px 0;
     padding: 30px 0 5px 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .menu ul {
@@ -142,7 +145,7 @@ img {
     right: 0;
     z-index: 1000;
     /*すりガラス風*/
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
@@ -197,7 +200,6 @@ img {
     pointer-events: none;
     margin: 15px auto 100px auto;
     border-radius: 20px;
-    transform: translateY(18px);
     transition: opacity .6s, transform .6s;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
@@ -304,7 +306,6 @@ img {
 
 
 /**********mainvisual**********/
-
 #mainvisual .content {
     height: 100vh;
     text-align: center;
@@ -316,11 +317,16 @@ img {
     font-size: 23px;
     font-family: 'Josefin Sans', sans-serif;
     margin-bottom: 10px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.5px;
 }
 
-#mainvisual .content h3 {
-    font-size: 20px;
-    margin-bottom: 30px;
+
+#mainvisual .content .slot-text {
+    font-size: 15px;
+    margin-top: 20px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 
@@ -441,6 +447,11 @@ scroll_down
     margin-bottom: 100px;
 }
 
+#skill .skill-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 #skill .skill-icons {
     border: 1.5px solid #f0f0f0;
     margin: 0 5%;
@@ -458,9 +469,6 @@ scroll_down
     margin-bottom:3px;
 }
 
-#skill .skill-icons .skill .tag {
-    font-weight: bold;
-}
 
 /* progress 全体 */
 progress {
@@ -497,9 +505,16 @@ progress::-moz-progress-bar {
 
 .tag {
     font-size: 10px;
-    padding: 4px 12px;
+    padding: 5px 12px;
     background-color: #f3f3f3;
+    border-radius: 5px;  
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;  
+    letter-spacing: 0.5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
   
 
@@ -591,7 +606,7 @@ progress::-moz-progress-bar {
 
 #works .work-items .work-text p {
     font-size: 10px;
-    margin: 5px 0;
+    margin: 5px 0 8px 0;
     color: #707070
 }
 
@@ -623,6 +638,8 @@ progress::-moz-progress-bar {
 #news dl {
     display: flex;
     flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
     border-top: solid 1px #c8c8c8;
     margin: 0 8% 100px 8%;
 }
@@ -707,11 +724,12 @@ progress::-moz-progress-bar {
 
 #contact .mail {
     width: 80%;
+    max-width: 400px;
     height: 40px;
     background-color: #000;
     color: #fff;
     padding: 8px 0;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: opacity .3s;
 }
 
@@ -989,8 +1007,8 @@ media query
         align-items: right;
     }
 
-    #news .news-items span {
-        align-items: left;
+    #news .news-items .category {
+        align-items: right;
     }
 
     /**********contact**********/
