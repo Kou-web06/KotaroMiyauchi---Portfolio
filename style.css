@@ -10,6 +10,34 @@ body {
     letter-spacing: 0.5px;
 }
 
+
+main {
+    background-image:
+        repeating-linear-gradient(to bottom,
+            transparent 25px,
+            rgba(0, 0, 0, 0.02) 26px,  rgba(0, 0, 0, 0.02) 26px,
+            transparent 27px,  transparent 51px, 
+            rgba(0, 0, 0, 0.02) 52px,  rgba(0, 0, 0, 0.02) 52px,
+            transparent 53px,  transparent 77px, 
+            rgba(0, 0, 0, 0.02) 78px,  rgba(0, 0, 0, 0.02) 78px,
+            transparent 79px,  transparent 103px, 
+            rgba(0, 0, 0, 0.02) 104px,  rgba(0, 0, 0, 0.02) 104px,
+            transparent 105px,  transparent 129px, 
+            rgba(0, 0, 0, 0.02) 130px,  rgba(0, 0, 0, 0.02  ) 130px),
+    
+        repeating-linear-gradient(to right,
+            transparent 25px,
+            rgba(0, 0, 0, 0.02) 26px,  rgba(0, 0, 0, 0.02) 26px,
+            transparent 27px,  transparent 51px, 
+            rgba(0, 0, 0, 0.02) 52px,  rgba(0, 0, 0, 0.02) 52px,
+            transparent 53px,  transparent 77px, 
+            rgba(0, 0, 0, 0.02) 78px,  rgba(0, 0, 0, 0.02) 78px,
+            transparent 79px,  transparent 103px, 
+            rgba(0, 0, 0, 0.02) 104px,  rgba(0, 0, 0, 0.02) 104px,
+            transparent 105px,  transparent 129px, 
+            rgba(0, 0, 0, 0.02) 130px,  rgba(0, 0, 0, 0.02) 130px);
+}
+
 img {
     max-width: 100%;
 }
@@ -199,12 +227,11 @@ img {
     opacity: 0;
     pointer-events: none;
     margin: 15px auto 100px auto;
-    border-radius: 50px;
     transition: opacity .6s, transform .6s;
     background-color: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -444,77 +471,113 @@ scroll_down
 /**********skill**********/
 
 #skill {
-    margin-bottom: 100px;
+    max-width: 94%;
+    margin: 0 3% 100px 3%;
 }
 
-#skill .skill-items {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#skill .skill-icons {
-    border: 1.5px solid #f0f0f0;
-    margin: 0 5%;
-    border-radius: 8px;
-    padding: 20px 30px;
-    margin-bottom: 40px;
-}
-
-#skill .skill-icons .subtitle {
-    font-size: 14px;
-}
-
-#skill .skill .label {
-    margin-top: 35px; 
-    margin-bottom:3px;
-}
-
-
-/* progress 全体 */
-progress {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 10px;
-}
-  
-/* 背景部分*/
-progress::-webkit-progress-bar {
-    background-color: #eee;
-    border-radius: 10px;
-}
-  
-/* 進捗部分*/
-progress::-webkit-progress-value {
-    background-color: #a1c4fd; /* ←ここで色を変更 */
-    border-radius: 10px;
-}
-  
-/* Firefox 用 */
-progress::-moz-progress-bar {
-    background-color: #a1c4fd;
-    border-radius: 10px;
-}
-
-#skill .skill-icons .flex {
+#skill .items-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
-.tag {
-    font-size: 10px;
-    padding: 5px 12px;
-    background-color: #f3f3f3;
-    border-radius: 5px;  
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;  
-    letter-spacing: 0.5px;
-    background-color: rgba(255, 255, 255, 0.6);
+#skill .skill-items .items-list .grid-two {
+    border: 1px solid #ececec;
+    font-size: 12px;
+    border-radius: 20px;
+    min-width: 200px;
+    height: 100px;
+
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0.3px);
+    -webkit-backdrop-filter: blur(0.3px);
+    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
+}
+
+
+#skill .skill-items .items-list .grid-one {
+    border: 1px solid #ececec;
+    font-size: 12px;
+    border-radius: 20px;
+    min-width: 410px;
+    height: 100px;
+    margin-bottom: 30px;
+
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px);
+    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
+}
+
+
+.grid-text {
+  transition: letter-spacing 0.1s;
+}
+
+.grid-text:hover {
+  letter-spacing: 0.1em; /* 字間の設定 */
+}
+
+
+/* モーダルデザイン */
+.modal {
+    position: fixed;
+    top: 25%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1500;
+    width: 94%;
+    max-width: 700px;
+    max-height: 300px;
+    text-align: center;
+    padding: 64px;
+    opacity: 0;
+    pointer-events: none;
+    margin: 15px auto 100px auto;
+    border-radius: 50px;
+    transition: opacity .6s, transform .6s;
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    margin: 15px auto 15px auto;
+}
+
+.modal-title {
+    font-size: 15px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 30px;
+}
+
+.modal-start {
+    font-size: 12px;
+    color: #474747;
+    margin: 10px auto 10px auto;
+}
+
+.modal-text {
+    font-size: 12px;
+    margin: 10px auto 10px auto;
+    max-width: 320px;
+}
+
+.modal #close1 {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
   
 
@@ -564,7 +627,9 @@ progress::-moz-progress-bar {
 
 #works .work-items { 
     width: 80%;
-    height: 280px;
+    max-height: 350px;
+    min-height: 260px;
+    background-color: #fff;
     margin: 3% 10% 10% 10%;
     border: 1.5px solid #e7e7e7;
     border-radius: 15px;
@@ -601,11 +666,12 @@ progress::-moz-progress-bar {
 #works .work-items .work-text h2 {
     font-size: 12px;
     font-weight: bold;
-    margin: 1px 0 3% 0;
+    margin: 3px 0 3% 0;
 }
 
 #works .work-items .work-text p {
     font-size: 10px;
+    min-height: 15px;
     margin: 5px 0 8px 0;
     color: #707070
 }
@@ -616,13 +682,6 @@ progress::-moz-progress-bar {
     align-items: center;
 }
 
-#works .work-items .work-text .tech .tech-item .tag {
-    font-size: 8px;
-    font-weight: bold;
-    margin-bottom: 1%;
-}
-
-
 #works .work-items .work-icon .add {
     padding: 3px 15px;
     background: linear-gradient(to right,
@@ -631,6 +690,16 @@ progress::-moz-progress-bar {
         #B8A9EC,  /* ラベンダー */
         #CBAAEF   /* ピンク寄りの紫 */
     );
+}
+
+.tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 3px;
+    font-size: 8px;
 }
 
 
@@ -955,9 +1024,7 @@ media query
         margin: 0 5%;
     }
 
-    #skill .skill-icons .skill .label {
-        width: 20%;
-    }
+
 
     /**********works**********/
 
