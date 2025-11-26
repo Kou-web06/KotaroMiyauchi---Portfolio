@@ -486,7 +486,7 @@ scroll_down
     border: 1px solid #ececec;
     font-size: 12px;
     border-radius: 20px;
-    min-width: 200px;
+    min-width: 150px;
     height: 100px;
 
     background-color: rgba(255, 255, 255, 0.05);
@@ -500,7 +500,7 @@ scroll_down
     border: 1px solid #ececec;
     font-size: 12px;
     border-radius: 20px;
-    min-width: 410px;
+    min-width: 310px;
     height: 100px;
     margin-bottom: 30px;
 
