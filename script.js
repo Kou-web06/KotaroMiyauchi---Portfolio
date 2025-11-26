@@ -30,6 +30,62 @@
         });
     });
 
+
+    
+    // モーダルの開閉
+    const modal = document.querySelector('.modal');
+
+    if (modal) {
+        const titleEl = modal.querySelector('.modal-title');
+        const startEl = modal.querySelector('.modal-start');
+        const textEl = modal.querySelector('.modal-text');
+
+        // 表示する内容を管理
+        const contents = {
+            'HTML / CSS': {
+                title: 'HTML / CSS',
+                start: '学習開始： 2025/06 ～',
+                text: 'Web制作の入り口として触り始めて、気づいたら一番落ち着く言語になりました。まだ作れるものは少ないですが、レイアウトが形になっていく瞬間が好きで気づくと時間を忘れて触ってしまいます。これからもっと幅を広げていきたいです。'
+            },
+            'JavaScript': {
+                title: 'JavaScript',
+                start: '学習開始： 2025/07 ～',
+                text: 'すぐに使いこなせたわけではないですが、とにかく試しながら覚えることを意識しています。まだ複雑なことはできませんが、基本的な動きを作れるようになってきました。コツがつかめる瞬間が増えていて、学ぶのが少し楽しくなってきています。'
+            },
+            'React': {
+                title: 'React',
+                start: '学習開始： 2025/09 ～',
+                text: '入門を終えたばかり。コンポーネントを組み立てていく感じがレゴみたいでワクワクしてます。「あ、こういうふうに考えるのか」という理解が増えてきて、ちょっとずつ全体像が見えてきた感じです。'
+            }
+        };
+
+        const setContent = (key) => {
+            const data = contents[key] || { title: key, start: '', text: '' };
+            if (titleEl) titleEl.textContent = data.title;
+            if (startEl) startEl.textContent = data.start;
+            if (textEl) textEl.textContent = data.text;
+        };
+
+        const skillButtons = document.querySelectorAll('#skill .skill-items .items-list button');
+        const modalClose = modal.querySelector('#close1');
+
+        skillButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const label = btn.querySelector('.grid-text');
+                const key = (label ? label.textContent : btn.textContent).trim();
+                setContent(key);
+                modal.classList.add('show');
+            });
+        });
+
+        if (modalClose) modalClose.addEventListener('click', () => modal.classList.remove('show'));
+
+        // 背景クリックで閉じる
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('show');
+        });
+    }
+
     class TxtRotate {
         constructor(el, toRotate, period) {
             this.toRotate = toRotate;
