@@ -720,10 +720,14 @@ scroll_down
 
 
 /**********news**********/
+#news {
+    width: 100%;
+}
 #news dl {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    justify-content: center;
+    max-width: 700px;
     margin: 0 auto;
     border-top: solid 1px #c8c8c8;
     margin: 0 8% 100px 8%;
@@ -741,7 +745,7 @@ scroll_down
     justify-content: flex-start;
     align-items: center;
     font-size: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 #news dd {
@@ -1084,6 +1088,8 @@ media query
 
     #news dl {
         margin: 0 20% 100px 20%;
+        justify-content: center;
+        max-width: 700px;
     }
 
     #news .news-items dt {
