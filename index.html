@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/onedivloaders@1.0.0/index.css"> <!--loader-->   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/line-seed-jp@5.2.2/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
@@ -37,7 +37,7 @@
                         <li><a href="#news">News</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skill">Skills</a></li>
-                        <li><a href="#works">Works</a></li>
+                        <li><a href="#works">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li>
                             <nav class="menu">
@@ -72,7 +72,7 @@
                         <span
                             class="txt-rotate"
                             data-period="2000"
-                            data-rotate='[ "Student.", "Developer.", "Teenager.", "Minimalist." ]'>
+                            data-rotate='[ "Student.", "Developer.", "ISFJ.", "Minimalist." ]'>
                         </span>
                     </p>
 
@@ -88,6 +88,11 @@
                 <h2>News</h2>
             </div>
             <dl><!--categoryはWORK SCHOOL LIFE EVENTから選択-->
+                <div class="news-items">
+                    <dt>2026 Feb.</dt>
+                    <dd><a href="https://tickemo.com">iOSアプリ「Tickemo」をリリースしました。</a></dd>
+                    <span class="category">#WORK</span>
+                </div>
                 <div class="news-items">
                     <dt>2025 Dec.</dt>
                     <dd><a href="https://zenn.dev/kou_webapp06/articles/735951b0aca812">初ハッカソンを振り返って</a></dd>
@@ -130,7 +135,7 @@
                     <p>
                       工学院大学情報学部に通う2年生。<br>
                       大学の授業でC言語に触れプログラミングデビュー。
-                      Web開発に興味を持ち、現在はフロントエンドエンジニアを目指して勉強中！
+                      使う人に「使い心地や温度」まで届けられるフロントエンドエンジニアを目指しています。
                       <br><br>
                       ドラマ・一人旅・ミセスが大好きな擁護者(isfj)です。
                     </p>
@@ -147,22 +152,21 @@
 
             <div class="skill-items">
                 <div class="items-list">
-                    <button class="grid-two">
-                        <p class="grid-text">HTML / CSS</p>
-                    </button>
-                    <button class="grid-two">
-                        <p class="grid-text">JavaScript</p>
-                    </button>
-                    <button class="grid-one">
-                        <p class="grid-text">React</p>
-                    </button>
+                    <div class="grid-one skill-card">
+                        <p class="grid-text">Languages &amp; Frameworks</p>
+                        <img class="skill-icons" src="https://skillicons.dev/icons?i=html,css,js,ts,c,python,react,nextjs" alt="HTML, CSS, JavaScript, TypeScript, C, Python, React, Next.js">
+                    </div>
+                    <div class="grid-one skill-card">
+                        <p class="grid-text">BaaS &amp; Tool</p>
+                        <img class="skill-icons" src="https://skillicons.dev/icons?i=git,github,supabase,vercel,figma" alt="Git, GitHub, Supabase, Vercel, Figma">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="works" class="fade-up">
             <div class="section-title">
-                <h2>Works</h2>
+                <h2>Projects</h2>
             </div>
 
             <div class="flex">
@@ -298,6 +302,35 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="work-items">
+                    <div class="work-icon">
+                        <span class="label add">ios</span>
+                        <a href="#"><img src="img/tickemo.png" alt="tickemo"></a>
+                        <div class="demo">
+                            <div class="demo-links">
+                                <a href="https://www.tickemo.com/">
+                                    <span class="material-symbols-outlined">
+                                        open_in_new
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work-text">
+                        <h2>Tickemo</h2>
+                        <p>ライブ記録をチケット風に記録＆シェアできるアプリ。</p>
+                        <div class="tech">
+                            <div class="tech-item">
+                                <span class="item-name">Tech: </span>
+                                <span class="tag">React Native</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Expo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -342,6 +375,7 @@
             <p class="copyright">&copy; 2025 Kotaro Miyauchi.</p>
         </div>
     </footer>
+    
 
     <script src="script.js"></script>
 

@@ -5,8 +5,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -48,7 +47,7 @@ img {
     font-weight: bold;
     margin: 25px 0;
     padding: 30px 0 5px 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -189,7 +188,7 @@ img {
 
 #header .header-title {
     font-size: 20px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     color: #474747;
     font-weight: bold;
 }
@@ -320,7 +319,7 @@ img {
     text-decoration: none;
     color: #4b4b4b;
     padding: 2px 10px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     font-size: 25px;
     font-weight: bold;
     transition: opacity .1s, transform .1s; /* 閉じる時もスムーズに戻す */
@@ -342,9 +341,8 @@ img {
 
 #mainvisual .content h1 {
     font-size: 23px;
-    font-family: 'Josefin Sans', sans-serif;
     margin-bottom: 10px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -352,7 +350,7 @@ img {
 #mainvisual .content .slot-text {
     font-size: 15px;
     margin-top: 20px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     letter-spacing: 0.5px;
 }
 
@@ -361,8 +359,6 @@ img {
 /**********
 scroll_down
 **********/
-
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 
 .scroll_down{
   position:absolute;
@@ -378,7 +374,7 @@ scroll_down
   bottom: 17px;
   color: #fff;
   font-size: 14px;
-  font-family: 'Josefin Sans', sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
   letter-spacing: .2em;
   writing-mode: vertical-rl;
   text-decoration: none;
@@ -477,6 +473,9 @@ scroll_down
 
 #skill .items-list {
     display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    margin: 0 auto;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
@@ -497,17 +496,36 @@ scroll_down
 
 
 #skill .skill-items .items-list .grid-one {
-    border: 1px solid #ececec;
     font-size: 12px;
     border-radius: 20px;
     min-width: 310px;
     height: 100px;
     margin-bottom: 30px;
+}
 
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(0.5px);
-    -webkit-backdrop-filter: blur(0.5px);
-    box-shadow: 0 3px 5px rgba(100, 100, 100, 0.1);
+#skill .skill-items .items-list .skill-card {
+    height: auto;
+    margin-bottom: 0;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#skill .skill-items .items-list .skill-card .grid-text {
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#skill .skill-items .items-list .skill-card .skill-icons {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    max-height: 40px;
 }
 
 
@@ -551,7 +569,7 @@ scroll_down
 
 .modal-title {
     font-size: 15px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'LINE Seed JP', sans-serif;
     margin-bottom: 30px;
 }
 
