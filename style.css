@@ -528,6 +528,31 @@ scroll_down
     max-height: 40px;
 }
 
+@media screen and (max-width: 767px) {
+    #skill .items-list {
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+    }
+
+    #skill .skill-items .items-list .grid-one {
+        min-width: 0;
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 20px;
+    }
+
+    #skill .skill-items .items-list .skill-card {
+        width: 100%;
+        text-align: center;
+    }
+
+    #skill .skill-items .items-list .skill-card .skill-icons {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
 
 .grid-text {
   transition: letter-spacing 0.1s;
